@@ -1,0 +1,17 @@
+
+name: Test File Creation
+
+on: [push]
+
+jobs:
+  create-file:
+    runs-on: self-hosted
+    steps:
+      - name: Mostrar el usuario actual
+        run: whoami
+
+      - name: Crear un archivo de prueba
+        run: echo "Hola, este archivo fue creado por GitHub Actions" > ~/test_github_runner.txt
+
+      - name: Verificar que el archivo existe
+        run: cat ~/test_github_runner.txt
